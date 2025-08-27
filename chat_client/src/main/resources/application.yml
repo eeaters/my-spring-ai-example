@@ -13,3 +13,9 @@ spring:
           connections:
             local:
               url: http://127.0.0.1:8081
+        enabled: false
+
+
+logging:
+  level:
+    org.springframework.ai.tool: debug

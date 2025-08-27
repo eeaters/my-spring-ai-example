@@ -1,4 +1,4 @@
-package io.eeaters.function_call;
+package io.eeaters.cmd;
 
 import io.modelcontextprotocol.client.McpSyncClient;
 import org.springframework.ai.chat.client.ChatClient;
@@ -6,7 +6,6 @@ import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -14,8 +13,8 @@ import java.util.List;
  * @author yjwan
  * @version 1.0
  */
-@Component
-public class FunctionCallCommandLineRunnable implements CommandLineRunner {
+//@Component
+public class McpCommandLineRunnable implements CommandLineRunner {
 
     @Autowired
     private ChatClient.Builder chatClientBuilder;
