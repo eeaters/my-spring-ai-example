@@ -5,9 +5,10 @@
         <groupId>io.eeaters</groupId>
         <artifactId>my-spring-ai-example</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>mcp-server</artifactId>
+    <artifactId>mcp-coder-server</artifactId>
     <packaging>jar</packaging>
 
     <name>mcp-server</name>
