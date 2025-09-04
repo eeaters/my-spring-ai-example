@@ -24,6 +24,8 @@
     <modules>
         <module>./mcp/chat_client</module>
         <module>./mcp/mcp-coder-server</module>
+        <module>./vector/qdrant-vector</module>
+        <module>./chatmodel/zhipu-sdk</module>
     </modules>
     <scm>
         <connection/>

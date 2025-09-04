@@ -1,0 +1,13 @@
+spring:
+  ai:
+    openai:
+      api-key: sk-9c97728d6dde4759a618f24d2d98706a
+      chat:
+        options:
+          model: deepseek-chat
+      base-url: https://api.deepseek.com
+
+    vectorstore:
+      qdrant:
+        host: 175.24.164.112
+        post: 6333
