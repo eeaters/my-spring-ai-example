@@ -26,6 +26,7 @@
         <module>./mcp/mcp-coder-server</module>
         <module>./vector/qdrant-vector</module>
         <module>./chatmodel/zhipu-sdk</module>
+        <module>./chatmodel/zhipu-springai</module>
     </modules>
     <scm>
         <connection/>

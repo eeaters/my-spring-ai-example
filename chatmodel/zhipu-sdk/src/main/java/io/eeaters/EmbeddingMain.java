@@ -10,12 +10,12 @@ import java.util.Arrays;
  * Hello world!
  *
  */
-public class App 
+public class EmbeddingMain
 {
     public static void main(String[] args) {
         // 初始化客户端
         ZhipuAiClient client = ZhipuAiClient.builder()
-                .apiKey("your-api-key")
+                .apiKey("api-key")
                 .build();
 
         // 创建向量化请求
