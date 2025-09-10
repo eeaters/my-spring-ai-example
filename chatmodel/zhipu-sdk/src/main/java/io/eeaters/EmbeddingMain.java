@@ -15,7 +15,7 @@ public class EmbeddingMain
     public static void main(String[] args) {
         // 初始化客户端
         ZhipuAiClient client = ZhipuAiClient.builder()
-                .apiKey("api-key")
+                .apiKey(Constants.ZhiPu.apiKey)
                 .build();
 
         // 创建向量化请求

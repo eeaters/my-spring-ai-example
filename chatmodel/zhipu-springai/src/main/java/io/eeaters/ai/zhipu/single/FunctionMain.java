@@ -1,7 +1,8 @@
-package io.eeaters.ai.zhipu;
+package io.eeaters.ai.zhipu.single;
 
 
-import io.eeaters.ai.zhipu.function_call.WeatherTools;
+import io.eeaters.Constants;
+import io.eeaters.ai.zhipu.single.function_call.EmailTools;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.model.chat.client.autoconfigure.ChatClientAutoConfiguration;
 import org.springframework.ai.model.tool.autoconfigure.ToolCallingAutoConfiguration;
@@ -17,19 +18,19 @@ public class FunctionMain {
     public static void main(String[] args) {
 
         var environment = new StandardEnvironment();
-        var propertySource = new MapPropertySource("demo", Map.of("spring.ai.zhipuai.apiKey", "api-key"));
+        var propertySource = new MapPropertySource("demo", Map.of("spring.ai.zhipuai.apiKey", Constants.ZhiPu.apiKey));
         environment.getPropertySources().addFirst(propertySource);
 
         var context = new AnnotationConfigApplicationContext();
         context.setEnvironment(environment);
-        context.register(WeatherTools.class);
+        context.register(EmailTools.class);
         context.register(ChatClientAutoConfiguration.class);
         context.register(ToolCallingAutoConfiguration.class);
         context.register(ZhiPuAiChatAutoConfiguration.class);
         context.refresh();
 
         ChatClient.Builder bean = context.getBean(ChatClient.Builder.class);
-        WeatherTools weatherTools = context.getBean(WeatherTools.class);
+        EmailTools weatherTools = context.getBean(EmailTools.class);
         ChatClient chatClient = bean
                 .defaultTools(weatherTools)
                 .build();

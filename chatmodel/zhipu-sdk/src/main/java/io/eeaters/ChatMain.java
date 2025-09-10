@@ -50,7 +50,7 @@ public class ChatMain {
 
         // 初始化客户端
         ZhipuAiClient client = ZhipuAiClient.builder()
-                .apiKey("api-key")
+                .apiKey(Constants.ZhiPu.apiKey)
                 .build();
         for (String s : modelList) {
             try{

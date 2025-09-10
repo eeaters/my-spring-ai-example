@@ -27,6 +27,8 @@
         <module>./vector/qdrant-vector</module>
         <module>./chatmodel/zhipu-sdk</module>
         <module>./chatmodel/zhipu-springai</module>
+        <module>example-core</module>
+        <module>./chatmodel/deepseek-springai</module>
     </modules>
     <scm>
         <connection/>
@@ -42,6 +44,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.eeaters</groupId>
+            <artifactId>example-core</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

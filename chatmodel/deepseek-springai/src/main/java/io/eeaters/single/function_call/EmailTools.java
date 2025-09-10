@@ -1,4 +1,4 @@
-package io.eeaters.ai.zhipu.function_call;
+package io.eeaters.single.function_call;
 
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import lombok.extern.slf4j.Slf4j;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class WeatherTools {
+public class EmailTools {
 
 
     @Tool(name = "sendEmail", description = "发送邮件到指定邮箱中")
