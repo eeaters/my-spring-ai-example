@@ -29,11 +29,19 @@ public class FunctionMain {
         context.refresh();
 
         ChatClient.Builder bean = context.getBean(ChatClient.Builder.class);
-        ChatClient build = bean.build();
+        WeatherTools weatherTools = context.getBean(WeatherTools.class);
+        ChatClient chatClient = bean
+                .defaultTools(weatherTools)
+                .build();
 
-        String ping = build.prompt("ping")
+        String result = chatClient
+                .prompt("""
+                        给我往 83748475@qq.com 这个邮箱里发一个邮件; 邮件的内容为: 
+                        
+                       `你好, 你的验证码为: 9352`
+                        """)
                 .call().content();
-        System.out.println("ping = " + ping);
+        System.out.println("result = " + result);
 
         context.close();
     }

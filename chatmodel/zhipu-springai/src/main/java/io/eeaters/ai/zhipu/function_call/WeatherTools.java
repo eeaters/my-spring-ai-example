@@ -21,7 +21,6 @@ public class WeatherTools {
             @JsonPropertyDescription("邮件内容") String content
     ) {
 
-
     }
 
 
