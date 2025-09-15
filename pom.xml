@@ -14,31 +14,20 @@
     <packaging>pom</packaging>
     <name>my-spring-ai-example</name>
     <description>my-spring-ai-example</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
     <modules>
         <module>./mcp/chat_client</module>
         <module>./mcp/mcp-coder-server</module>
         <module>./vector/qdrant-vector</module>
         <module>./chatmodel/zhipu-sdk</module>
         <module>./chatmodel/zhipu-springai</module>
-        <module>example-core</module>
+        <module>./example-core</module>
         <module>./chatmodel/deepseek-springai</module>
+        <module>./mcp/mcp-sdk-server</module>
     </modules>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
     <properties>
         <java.version>21</java.version>
         <spring-ai.version>1.1.0-SNAPSHOT</spring-ai.version>
+        <mcp.version>0.12.1</mcp.version>
     </properties>
     <dependencies>
         <dependency>
@@ -46,15 +35,8 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.eeaters</groupId>
-            <artifactId>example-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -71,16 +53,37 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>io.modelcontextprotocol.sdk</groupId>
+                <artifactId>mcp-bom</artifactId>
+                <version>${mcp.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.eeaters</groupId>
+                <artifactId>example-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

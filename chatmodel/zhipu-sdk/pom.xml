@@ -5,6 +5,7 @@
         <groupId>io.eeaters</groupId>
         <artifactId>my-spring-ai-example</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>zhipu-sdk</artifactId>
@@ -25,11 +26,14 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>ai.z.openapi</groupId>
             <artifactId>zai-sdk</artifactId>
             <version>${zhipu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.eeaters</groupId>
+            <artifactId>example-core</artifactId>
         </dependency>
     </dependencies>
 </project>

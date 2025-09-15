@@ -36,4 +36,5 @@
             <artifactId>spring-ai-starter-mcp-client</artifactId>
         </dependency>
     </dependencies>
+
 </project>
