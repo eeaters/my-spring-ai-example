@@ -22,12 +22,10 @@
         <module>./chatmodel/zhipu-springai</module>
         <module>./example-core</module>
         <module>./chatmodel/deepseek-springai</module>
-        <module>./mcp/mcp-sdk-server</module>
     </modules>
     <properties>
         <java.version>21</java.version>
         <spring-ai.version>1.1.0-SNAPSHOT</spring-ai.version>
-        <mcp.version>0.12.1</mcp.version>
     </properties>
     <dependencies>
         <dependency>
@@ -50,14 +48,6 @@
                 <groupId>org.springframework.ai</groupId>
                 <artifactId>spring-ai-bom</artifactId>
                 <version>${spring-ai.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>io.modelcontextprotocol.sdk</groupId>
-                <artifactId>mcp-bom</artifactId>
-                <version>${mcp.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
