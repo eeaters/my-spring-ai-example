@@ -22,6 +22,7 @@
         <module>./chatmodel/zhipu-springai</module>
         <module>./example-core</module>
         <module>./chatmodel/deepseek-springai</module>
+        <module>./bot/disney_knowledge_bot</module>
     </modules>
     <properties>
         <java.version>21</java.version>

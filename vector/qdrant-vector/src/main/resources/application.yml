@@ -1,7 +1,7 @@
 spring:
   ai:
     openai:
-      api-key: sk-9c97728d6dde4759a618f24d2d98706a
+      api-key: {api-key}
       chat:
         options:
           model: deepseek-chat
