@@ -5,18 +5,16 @@
         <groupId>io.eeaters</groupId>
         <artifactId>my-spring-ai-example</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zhipu-sdk</artifactId>
+    <artifactId>open-manus</artifactId>
     <packaging>jar</packaging>
 
-    <name>zhipu-sdk</name>
+    <name>open-manus</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <zhipu.version>0.0.5</zhipu.version>
     </properties>
 
     <dependencies>
@@ -27,13 +25,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>ai.z.openapi</groupId>
-            <artifactId>zai-sdk</artifactId>
-            <version>${zhipu.version}</version>
-        </dependency>
-        <dependency>
             <groupId>io.eeaters</groupId>
             <artifactId>example-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-zhipuai</artifactId>
         </dependency>
     </dependencies>
 </project>

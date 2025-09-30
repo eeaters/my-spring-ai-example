@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: open-manus
+  main:
+    web-application-type: none
+
+openmanus:
+  workspace: ./workspace
+  max-steps: 20
+
+
+logging:
+  level:
+    io.eeaters.bot.open_manus: DEBUG
+    org.springframework.ai: INFO
+    org.springframework.ai.mcp: DEBUG
