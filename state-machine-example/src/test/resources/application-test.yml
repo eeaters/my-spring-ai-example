@@ -1,0 +1,75 @@
+server:
+  port: 0  # 随机端口
+
+spring:
+  application:
+    name: email-coordinator-test
+
+  # 邮件配置（测试环境）
+  mail:
+    host: localhost
+    port: 3025
+    username: test@example.com
+    password: test-password
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+          connectiontimeout: 1000
+          timeout: 1000
+          writetimeout: 1000
+
+  # Spring AI配置（测试环境）
+  ai:
+    openai:
+      api-key: test-api-key
+      chat:
+        options:
+          model: gpt-3.5-turbo
+          temperature: 0.1
+          max-tokens: 100
+
+# 日志配置
+logging:
+  level:
+    io.eeaters.statemachine: INFO
+    org.springframework.statemachine: WARN
+    org.springframework.mail: WARN
+  pattern:
+    console: "%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# 邮件协调器配置（测试环境）
+email-coordinator:
+  # 轮询配置
+  polling:
+    enabled: true
+    interval: 5000   # 5秒轮询一次（测试时更快）
+    max-attempts: 5  # 最大轮询5次
+    initial-delay: 1000 # 初始延迟1秒
+
+  # 邮件模板配置
+  templates:
+    initial-email:
+      subject: "测试协调任务邀请"
+      body: "您好，\n\n我们邀请您参与测试协调任务，请回复是否同意。\n\n谢谢！"
+
+    follow-up-email:
+      subject: "测试协调任务跟进"
+      body: "您好，\n\n我们之前发送的测试协调任务邀请，希望您能回复确认。\n\n谢谢！"
+
+  # 响应分析配置
+  response-analysis:
+    agree-keywords: ["同意", "确认", "好的", "OK", "yes", "accept"]
+    disagree-keywords: ["不同意", "拒绝", "不能", "no", "reject"]
+    confidence-threshold: 0.6
+    enable-ai-analysis: false  # 测试时关闭AI分析
+
+  # 任务配置
+  task:
+    timeout: 60000   # 1分钟超时（测试时更短）
+    retry-count: 1   # 重试1次
+    max-concurrent-tasks: 5
+    cleanup-interval: 30000 # 30秒清理间隔

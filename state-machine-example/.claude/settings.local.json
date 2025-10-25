@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/13524/IdeaProjects/my-spring-ai-example/**)",
+      "Bash(./mvnw clean compile:*)",
+      "Bash(mvn clean:*)",
+      "Bash(mvn spring-javaformat:apply:*)",
+      "Bash(mvn test:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

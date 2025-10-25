@@ -24,6 +24,7 @@
         <module>./chatmodel/deepseek-springai</module>
         <module>./bot/disney_knowledge_bot</module>
         <module>./bot/open-manus</module>
+        <module>state-machine-example</module>
     </modules>
     <properties>
         <java.version>21</java.version>
