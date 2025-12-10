@@ -26,6 +26,7 @@
         <module>./bot/open-manus</module>
         <module>langgraph_example</module>
         <module>email-example</module>
+        <module>langchain-example</module>
     </modules>
     <properties>
         <java.version>21</java.version>
